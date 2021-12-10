@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+12-1-Student_Resources/*
+12-2-Student_Resources/*
+
 # Distribution / packaging
 .Python
 build/
