@@ -1,17 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Fast-Growing Cities 2016-2017</title>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
-  <div id="bar-plot"></div>
-  <hr>
-  <div id="population-plot"></div>
-  <script src="data.js"></script>
-  <script src="plot.js"></script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center hero-header">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well">
+          <b>Test Subject ID No. 
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)" class="form-control"></select>
+          </b>
+        </div>
+        <p>This dashboard allows it's volunteers to identify the bacterial species found in their belly button. This can be useful if and when Improbable Beef identifies a species as a candidate to manufactor synthetic beef, volunteers can use this dashboard to quickly find out if they have have that species in their navel.</p>
+        <p>To get started, simply select a <b>Test Subject ID No.</b> from the select drop-down above. </p>
+        <hr class="visible-xs-block">
+      </div>
+      <div class="col-md-8">
+        <div class="panel panel-success">
+    
+          <div class="panel-body">
+            <table class="table">
+              <thead>
+                <tr class="bg-success">
+                  <th colspan="2">Demographic Info</th>
+                </tr>
+              </thead>
+              <tbody id="sample-metadata" class="small"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="visible-xs-block">
+          <div class="row jumbotron">
+            <div class="col-xs-6"><h2>Belly Button Washing Frequency</h2></div>
+            <div class="col-xs-6"><h3>Scrubs Per Week</h3><h1 id="wfreqValue"></h1></div>
+          </div>
+        </div>
+        <div id="gauge" class="hidden-xs hidden-sm"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="js/chart.js"></script>
+
 </body>
+
 </html>
